@@ -24,6 +24,11 @@ export class Home extends React.Component {
 	setWinner = player => {
 		this.setState({ winner: player });
 	};
+
+	// refreshPage = () => {
+	// 	window.location.reload();
+
+	// };
 	render() {
 		if (this.state.winner == "") {
 			return (
@@ -50,6 +55,11 @@ export class Home extends React.Component {
 							: this.state.player2}{" "}
 						won the last round!
 					</h1>
+					<button
+						type="button"
+						onClick={event => this.setState({ winner: "" })}>
+						Refresh Page
+					</button>
 					;
 					<div className="text-center mt-5">
 						{this.state.player == "" ? (
