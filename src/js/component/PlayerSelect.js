@@ -52,8 +52,8 @@ export class PlayerSelect extends React.Component {
 										className="form-control"
 										aria-label="Default"
 										aria-describedby="inputGroup-sizing-default"
-										onChange={evt =>
-											(this.player1 = evt.target.value)
+										onChange={event =>
+											(this.player1 = event.target.value)
 										}
 									/>
 									<input
@@ -61,8 +61,8 @@ export class PlayerSelect extends React.Component {
 										className="form-control"
 										aria-label="Default"
 										aria-describedby="inputGroup-sizing-default"
-										onChange={evt =>
-											(this.player2 = evt.target.value)
+										onChange={event =>
+											(this.player2 = event.target.value)
 										}
 									/>
 								</div>

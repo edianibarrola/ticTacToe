@@ -11,3 +11,29 @@
     import 'relative/path/to/stylesheet.scss';
 
 */
+
+.gameArea {
+  min-height: 40vh;
+  min-width: 40vw;
+  max-height: 40vh;
+  max-width: 40vw;
+  margin: auto;
+  justify-content:center;
+}
+
+.gameBox {
+  min-height: 33%;
+  min-width: 33%;
+  background: red;
+  text-align: center;
+  padding:10%;
+  border:1px solid  black;
+  
+}
+.centered {
+ position: fixed;
+  top: 40%;
+  left: 50%;
+  
+  transform: translate(-50%, -50%);
+}
