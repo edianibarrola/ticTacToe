@@ -101,3 +101,6 @@ export class PlayerSelect extends React.Component {
 		);
 	}
 }
+PlayerSelect.propTypes = {
+	onSetTurn: PropTypes.func
+};
