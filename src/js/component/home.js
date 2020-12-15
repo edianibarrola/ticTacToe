@@ -47,19 +47,23 @@ export class Home extends React.Component {
 		} else if (this.state.winner != "") {
 			return (
 				<>
-					<h1>
-						{" "}
-						Congratulations!{" "}
-						{this.state.winner == "X"
-							? this.state.player1
-							: this.state.player2}{" "}
-						won the last round!
-					</h1>
-					<button
-						type="button"
-						onClick={event => this.setState({ winner: "" })}>
-						Refresh Page
-					</button>
+					<div className="container  justify-content-center">
+						<h1 className="congrats col-12">
+							{" "}
+							Congratulations!{" "}
+							{this.state.winner == "X"
+								? this.state.player1
+								: this.state.player2}{" "}
+							won the last round!
+						</h1>
+						<button
+							className="mx-auto"
+							type="button"
+							onClick={event => this.setState({ winner: "" })}
+							label="Play Again!">
+							Play again!
+						</button>
+					</div>
 					;
 					<div className="text-center mt-5">
 						{this.state.player == "" ? (
