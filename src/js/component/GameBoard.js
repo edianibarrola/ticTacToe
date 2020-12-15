@@ -8,21 +8,21 @@ export class GameBoard extends React.Component {
 		};
 	}
 
-	updateNextMove(squarePressed) {
+	updateNextMove = squarePressed => {
 		//mapping through state and returning new square values
 		var newSquareValues = this.state.squareValues.map(
 			(item, position) =>
 				//check to see if box was filled, if not fill it
-				position == squarePressed && position == ""
+				position == squarePressed && item == ""
 					? this.props.currentPlayer
 					: item
 		);
 		this.setState({ squareValues: newSquareValues });
-		this.props.onMove(squarePressed);
+		this.props.propNextTurn(squarePressed);
 		this.checkForWinner(newSquareValues);
-		this.props.prop2();
+
 		this.checkForWinner(newSquareValues);
-	}
+	};
 	checkForWinner = newSquareValues => {
 		//for each winboards  if it == new square values they win
 		let winBoards = [
@@ -43,7 +43,7 @@ export class GameBoard extends React.Component {
 					if (newSquareValues[i] == this.props.currentPlayer) {
 						counter++;
 						if (counter > 2) {
-							this.props.prop3(this.props.currentPlayer);
+							this.props.propSetWinner(this.props.currentPlayer);
 						}
 					}
 				}
@@ -55,15 +55,69 @@ export class GameBoard extends React.Component {
 			<div className="container">
 				<div className="gameArea centered" id="0">
 					<div className="row ">
-						<div className="gameBox col-4" id="1" />
-						<div className="gameBox col-4" id="2" />
-						<div className="gameBox col-4" id="3" />
-						<div className="gameBox col-4" id="4" />
-						<div className="gameBox col-4" id="5" />
-						<div className="gameBox col-4" id="6" />
-						<div className="gameBox col-4" id="7" />
-						<div className="gameBox col-4" id="8" />
-						<div className="gameBox col-4" id="9" />
+						<div
+							className="gameBox col-4"
+							id="1"
+							onClick={() => this.updateNextMove(0)}>
+							{" "}
+							{this.state.squareValues[0]}{" "}
+						</div>
+						<div
+							className="gameBox col-4"
+							id="2"
+							onClick={() => this.updateNextMove(1)}>
+							{" "}
+							{this.state.squareValues[1]}{" "}
+						</div>
+						<div
+							className="gameBox col-4"
+							id="3"
+							onClick={() => this.updateNextMove(2)}>
+							{" "}
+							{this.state.squareValues[2]}{" "}
+						</div>
+						<div
+							className="gameBox col-4"
+							id="4"
+							onClick={() => this.updateNextMove(3)}>
+							{" "}
+							{this.state.squareValues[3]}{" "}
+						</div>
+						<div
+							className="gameBox col-4"
+							id="5"
+							onClick={() => this.updateNextMove(4)}>
+							{" "}
+							{this.state.squareValues[4]}{" "}
+						</div>
+						<div
+							className="gameBox col-4"
+							id="6"
+							onClick={() => this.updateNextMove(5)}>
+							{" "}
+							{this.state.squareValues[5]}{" "}
+						</div>
+						<div
+							className="gameBox col-4"
+							id="7"
+							onClick={() => this.updateNextMove(6)}>
+							{" "}
+							{this.state.squareValues[6]}{" "}
+						</div>
+						<div
+							className="gameBox col-4"
+							id="8"
+							onClick={() => this.updateNextMove(7)}>
+							{" "}
+							{this.state.squareValues[7]}{" "}
+						</div>
+						<div
+							className="gameBox col-4"
+							id="9"
+							onClick={() => this.updateNextMove(8)}>
+							{" "}
+							{this.state.squareValues[8]}{" "}
+						</div>
 					</div>
 				</div>
 			</div>
@@ -73,6 +127,6 @@ export class GameBoard extends React.Component {
 GameBoard.propTypes = {
 	onMove: PropTypes.func,
 	currentPlayer: PropTypes.string,
-	prop2: PropTypes.func,
-	prop3: PropTypes.func
+	propNextTurn: PropTypes.func,
+	propSetWinner: PropTypes.func
 };
