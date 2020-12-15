@@ -18,10 +18,16 @@ export class GameBoard extends React.Component {
 					: item
 		);
 		this.setState({ squareValues: newSquareValues });
-		this.props.propNextTurn(squarePressed);
-		this.checkForWinner(newSquareValues);
 
+		if (this.state.squareValues[squarePressed] == "") {
+			this.props.propNextTurn(squarePressed);
+		}
 		this.checkForWinner(newSquareValues);
+		if (!newSquareValues.includes("")) {
+			this.setState({
+				squareValues: ["", "", "", "", "", "", "", "", ""]
+			});
+		}
 	};
 	checkForWinner = newSquareValues => {
 		//for each winboards  if it == new square values they win
@@ -44,6 +50,19 @@ export class GameBoard extends React.Component {
 						counter++;
 						if (counter > 2) {
 							this.props.propSetWinner(this.props.currentPlayer);
+							this.setState({
+								squareValues: [
+									"",
+									"",
+									"",
+									"",
+									"",
+									"",
+									"",
+									"",
+									""
+								]
+							});
 						}
 					}
 				}
