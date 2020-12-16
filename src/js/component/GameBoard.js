@@ -27,6 +27,8 @@ export class GameBoard extends React.Component {
 			this.setState({
 				squareValues: ["", "", "", "", "", "", "", "", ""]
 			});
+			//pass function here to increase counter this.props.incrementGame passed from home.js
+			this.props.propIncrementGame();
 		}
 	};
 	checkForWinner = newSquareValues => {
@@ -147,5 +149,7 @@ GameBoard.propTypes = {
 	onMove: PropTypes.func,
 	currentPlayer: PropTypes.string,
 	propNextTurn: PropTypes.func,
-	propSetWinner: PropTypes.func
+	propSetWinner: PropTypes.func,
+	propIncrementGame: PropTypes.func,
+	propCurrentGame: PropTypes.number
 };

@@ -10,7 +10,8 @@ export class Home extends React.Component {
 			player: "",
 			winner: "",
 			player1: "",
-			player2: ""
+			player2: "",
+			currentGame: 0
 		};
 	}
 	setTurn = (symbol, player1, player2) => {
@@ -22,18 +23,22 @@ export class Home extends React.Component {
 		// this sets player with a value from PlayerSelect and sets first symbol
 	};
 	setWinner = player => {
-		this.setState({ winner: player });
+		this.setState({ winner: player, currentGame: 0 });
 	};
-	//if x - player 1  , 0 player 2
+	incrementGame = () => {
+		this.setState({ currentGame: this.state.currentGame + 1 });
+	};
 
 	render() {
 		if (this.state.winner == "") {
+			//counter for games played until victory
 			return (
 				<div className="text-center mt-5">
 					{this.state.player == "" ? (
 						<PlayerSelect onSetTurn={this.setTurn} />
 					) : (
 						<div>
+							<h2>{this.state.currentGame}</h2>
 							<h2>
 								{this.state.player}
 								&#39;s turn
@@ -42,6 +47,8 @@ export class Home extends React.Component {
 								currentPlayer={this.state.player}
 								propNextTurn={this.nextTurn}
 								propSetWinner={this.setWinner}
+								propIncrementGame={this.incrementGame}
+								propCurrentGame={this.state.currentGame}
 							/>
 						</div>
 					)}{" "}
