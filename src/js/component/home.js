@@ -11,7 +11,7 @@ export class Home extends React.Component {
 			winner: "",
 			player1: "",
 			player2: "",
-			currentGame: 0
+			currentGame: 1
 		};
 	}
 	setTurn = (symbol, player1, player2) => {
@@ -38,7 +38,7 @@ export class Home extends React.Component {
 						<PlayerSelect onSetTurn={this.setTurn} />
 					) : (
 						<div>
-							<h2>{this.state.currentGame}</h2>
+							<h2>Game #{this.state.currentGame}</h2>
 							<h2>
 								{this.state.player}
 								&#39;s turn

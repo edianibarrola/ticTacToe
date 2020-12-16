@@ -19,31 +19,39 @@ button {
 }
 .gameArea {
   margin-top: 40px;
-  min-height: 50vh;
-  min-width: 50vw;
+  min-height: 60vh;
+  min-width: 60vw;
   max-height: 60vh;
   max-width: 60vw;
   margin: auto;
   justify-content:center;
-  margin-bottom: 10%;
+  
   margin-top:10%;
   
 }
 
 .gameBox {
-  min-height: 33%;
-  min-width: 33%;
+   padding-top:10%;
+   max-height: 33%;
+   max-width: 33%;
+   padding-bottom:-5%;
+
+  
+  
   font-size:2rem;
   text-align: center;
-  padding:10%;
+  
   text-shadow: 2px 2px green;
   color: yellowgreen;
+  
+  
+  
   
   
 }
 .centered {
  position: fixed;
-  top: 40%;
+  top: 50%;
   left: 50%;
   
   transform: translate(-50%, -50%);

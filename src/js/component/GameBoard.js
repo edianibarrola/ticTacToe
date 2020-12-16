@@ -74,8 +74,8 @@ export class GameBoard extends React.Component {
 	render() {
 		return (
 			<div className="container">
-				<div className="gameArea centered" id="0">
-					<div className="row ">
+				<div className="centered " id="0">
+					<div className="row gameArea ">
 						<div
 							className="gameBox br bb col-4"
 							id="1"
