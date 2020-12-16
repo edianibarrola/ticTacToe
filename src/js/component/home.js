@@ -24,11 +24,8 @@ export class Home extends React.Component {
 	setWinner = player => {
 		this.setState({ winner: player });
 	};
+	//if x - player 1  , 0 player 2
 
-	// refreshPage = () => {
-	// 	window.location.reload();
-
-	// };
 	render() {
 		if (this.state.winner == "") {
 			return (
@@ -36,11 +33,17 @@ export class Home extends React.Component {
 					{this.state.player == "" ? (
 						<PlayerSelect onSetTurn={this.setTurn} />
 					) : (
-						<GameBoard
-							currentPlayer={this.state.player}
-							propNextTurn={this.nextTurn}
-							propSetWinner={this.setWinner}
-						/>
+						<div>
+							<h2>
+								{this.state.player}
+								&#39;s turn
+							</h2>
+							<GameBoard
+								currentPlayer={this.state.player}
+								propNextTurn={this.nextTurn}
+								propSetWinner={this.setWinner}
+							/>
+						</div>
 					)}{" "}
 				</div>
 			);
@@ -56,15 +59,17 @@ export class Home extends React.Component {
 								: this.state.player2}{" "}
 							won the last round!
 						</h1>
-						<button
-							className="mx-auto"
-							type="button"
-							onClick={event => this.setState({ winner: "" })}
-							label="Play Again!">
-							Play again!
-						</button>
+						<div className="row justify-content-center">
+							<button
+								className="mx-auto"
+								type="button"
+								onClick={event => this.setState({ winner: "" })}
+								label="Play Again!">
+								Play again!
+							</button>
+						</div>
 					</div>
-					;
+
 					<div className="text-center mt-5">
 						{this.state.player == "" ? (
 							<PlayerSelect onSetTurn={this.setTurn} />

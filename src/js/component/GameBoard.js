@@ -75,49 +75,49 @@ export class GameBoard extends React.Component {
 				<div className="gameArea centered" id="0">
 					<div className="row ">
 						<div
-							className="gameBox col-4"
+							className="gameBox br bb col-4"
 							id="1"
 							onClick={() => this.updateNextMove(0)}>
 							{" "}
 							{this.state.squareValues[0]}{" "}
 						</div>
 						<div
-							className="gameBox col-4"
+							className="gameBox bb col-4"
 							id="2"
 							onClick={() => this.updateNextMove(1)}>
 							{" "}
 							{this.state.squareValues[1]}{" "}
 						</div>
 						<div
-							className="gameBox col-4"
+							className="gameBox bl bb col-4"
 							id="3"
 							onClick={() => this.updateNextMove(2)}>
 							{" "}
 							{this.state.squareValues[2]}{" "}
 						</div>
 						<div
-							className="gameBox col-4"
+							className="gameBox br bb col-4"
 							id="4"
 							onClick={() => this.updateNextMove(3)}>
 							{" "}
 							{this.state.squareValues[3]}{" "}
 						</div>
 						<div
-							className="gameBox col-4"
+							className="gameBox bb col-4"
 							id="5"
 							onClick={() => this.updateNextMove(4)}>
 							{" "}
 							{this.state.squareValues[4]}{" "}
 						</div>
 						<div
-							className="gameBox col-4"
+							className="gameBox bl bb col-4"
 							id="6"
 							onClick={() => this.updateNextMove(5)}>
 							{" "}
 							{this.state.squareValues[5]}{" "}
 						</div>
 						<div
-							className="gameBox col-4"
+							className="gameBox br col-4"
 							id="7"
 							onClick={() => this.updateNextMove(6)}>
 							{" "}
@@ -131,7 +131,7 @@ export class GameBoard extends React.Component {
 							{this.state.squareValues[7]}{" "}
 						</div>
 						<div
-							className="gameBox col-4"
+							className="gameBox bl col-4"
 							id="9"
 							onClick={() => this.updateNextMove(8)}>
 							{" "}
